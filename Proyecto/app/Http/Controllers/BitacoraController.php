@@ -8,7 +8,7 @@ use Illuminate\Http\Request;
 class BitacoraController extends Controller
 {
     /**
-     * Display a listing of the resource.
+     * Muestra todas las Bitacoras
      *
      * @return \Illuminate\Http\Response
      */
@@ -20,7 +20,7 @@ class BitacoraController extends Controller
     }
 
     /**
-     * Show the form for creating a new resource.
+     * Muestra el formulario para crear la nueva bitacora
      *
      * @return \Illuminate\Http\Response
      */
@@ -30,7 +30,7 @@ class BitacoraController extends Controller
     }
 
     /**
-     * Store a newly created resource in storage.
+     * Almacena la bitacora en la bd
      *
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
@@ -51,7 +51,7 @@ class BitacoraController extends Controller
     }
 
     /**
-     * Display the specified resource.
+     * Mostrar el recurso especificado. :-:
      *
      * @param  \App\Bitacora  $bitacora
      * @return \Illuminate\Http\Response
@@ -62,7 +62,7 @@ class BitacoraController extends Controller
     }
 
     /**
-     * Show the form for editing the specified resource.
+     * Muestra la forma para editar la bitacora :-:
      *
      * @param  \App\Bitacora  $bitacora
      * @return \Illuminate\Http\Response
@@ -73,7 +73,7 @@ class BitacoraController extends Controller
     }
 
     /**
-     * Update the specified resource in storage.
+     * Hace un update a un recurso especifico :-:
      *
      * @param  \Illuminate\Http\Request  $request
      * @param  \App\Bitacora  $bitacora
@@ -95,7 +95,7 @@ class BitacoraController extends Controller
     }
 
     /**
-     * Remove the specified resource from storage.
+     * Remueve un recurso especifico :-:
      *
      * @param  \App\Bitacora  $bitacora
      * @return \Illuminate\Http\Response

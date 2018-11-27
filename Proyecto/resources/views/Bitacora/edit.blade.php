@@ -16,7 +16,7 @@
 
     @if ($errors->any())
         <div class="alert alert-danger">
-            <strong>Whoops!</strong> There were some problems with your input.<br><br>
+            <strong>Whoops!</strong> Hay un error con los datos ingresados o no estan completos.<br><br>
             <ul>
                 @foreach ($errors->all() as $error)
                     <li>{{ $error }}</li>
@@ -34,13 +34,13 @@
          <div class="row">
 		    <div class="col-xs-12 col-sm-12 col-md-12">
 		        <div class="form-group">
-		            <strong>Name:</strong>
+		            <strong>Nombre:</strong>
 		            <input type="text" name="_id" value="{{ $bitacora->_id }}" class="form-control" placeholder="Name">
 		        </div>
 		    </div>
 		    <div class="col-xs-12 col-sm-12 col-md-12">
 		        <div class="form-group">
-		            <strong>Detail:</strong>
+		            <strong>Materia:</strong>
 		            <textarea class="form-control" style="height:150px" name="puntos_actividad" placeholder="Detail">{{ $bitacora->puntos_actividad }}</textarea>
 		        </div>
 		    </div>
