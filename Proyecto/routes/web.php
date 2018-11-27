@@ -14,3 +14,9 @@
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('Cursos', 'CursosController@Cursos');
+Route::get('Comentarios', 'ComentariosController@Comentarios');
+Auth::routes();
+
+Route::resource('Usuario','UsuarioController');
