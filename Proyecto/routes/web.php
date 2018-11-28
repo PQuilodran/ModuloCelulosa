@@ -15,13 +15,17 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-//Route::get('Cursos', 'CursosController@Cursos');
-//Route::get('Comentarios', 'ComentariosController@Comentarios');
+Route::get('/comentarios', function () {
+    return view('Bitacora.comentario');
+});
+
+Route::get('Cursos', 'CursosController@Cursos');
+Route::get('Comentarios', 'ComentariosController@Comentarios');
 Auth::routes();
 
 Route::resource('Bitacora','BitacoraController');
-//Route::resource('Bitacora','BitacoraController');
+Route::resource('Bitacora','BitacoraController');
 
-//Route::get('index', 'Registro_tutorController@regis');
+Route::get('index', 'Registro_tutorController@regis');
 
-//Route::delete('{id}','BitacoraController@destroy');
+Route::delete('{id}','BitacoraController@destroy');
