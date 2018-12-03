@@ -10,7 +10,8 @@ use Jenssegers\Mongodb\Eloquent\Model as Eloquent;
 class Bitacora extends Eloquent
 {
 	protected $connection = 'mongodb';
-	protected $collection = 'Bitacora';
+    protected $collection = 'Bitacora';
+    
 
 
     /**
@@ -19,6 +20,8 @@ class Bitacora extends Eloquent
      * @var array
      */
     protected $fillable = [
-        '_id', 'puntuacion_plataforma'
+        '_id', 'titulo','materia','autor','info'
     ];
+    protected $primaryKey = 'id'; 
+    
 }

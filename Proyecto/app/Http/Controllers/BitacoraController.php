@@ -37,17 +37,18 @@ class BitacoraController extends Controller
      */
     public function store(Request $request)
     {
-        request()->validate([
-            '_id' => 'required',
-            'puntos_actividad' => 'required',
-        ]);
-
-
+        ([
+        '_id' => 'required',
+        'titulo' => 'required',
+        'materia' => 'required',
+        'autor' => 'required',
+        'info' => 'required',
+    ]);
         Bitacora::create($request->all());
 
 
         return redirect()->route('Bitacora.index')
-                        ->with('success','Bitacora created successfully.');
+                        ->with('success','Bitacora crada con exito.');
     }
 
     /**
@@ -100,12 +101,11 @@ class BitacoraController extends Controller
      * @param  \App\Bitacora  $bitacora
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Bitacora $bitacora)
-    {
-         $bitacora->delete();
+    public function destroy($id){
 
-
-        return redirect()->route('Bitacora.index')
-                        ->with('success','Bitacora deleted successfully');
+        $bitacora = Bitacora::find($id);
+        dump($bitacora/$id);
+        $bitacora->delete();
+        return redirect('Bitacora.index')->with('success','Car has been  deleted');
     }
 }
