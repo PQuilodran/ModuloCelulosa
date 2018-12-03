@@ -100,8 +100,9 @@ class BitacoraController extends Controller
      * @param  \App\Bitacora  $bitacora
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Bitacora $bitacora)
+    public function destroy( $_id)
     {
+        $bitacora=Bitacora::find($_id);
          $bitacora->delete();
 
 
