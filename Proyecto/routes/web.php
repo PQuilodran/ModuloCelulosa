@@ -28,4 +28,7 @@ Route::resource('Bitacora','BitacoraController');
 
 Route::get('index', 'Registro_tutorController@regis');
 
+Route::get('edit/{id}','BitacoraController@show');
+Route::get('edit/{id}','BitacoraController@edit');
+Route::post('edit/{titulo}','BitacoraController@update');
 Route::delete('{id}','BitacoraController@destroy');

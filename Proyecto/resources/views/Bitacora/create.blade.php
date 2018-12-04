@@ -14,7 +14,7 @@
     </div>
 
 
-    @if ($errors->any())
+   @if ($errors->any())
         <div class="alert alert-danger">
             <strong>Ups!</strong> Hay un error con los datos ingresados o no estan completos los campos..<br><br>
             <ul>
@@ -33,23 +33,36 @@
          <div class="row">
 		    <div class="col-xs-12 col-sm-12 col-md-12">
 		        <div class="form-group">
-		            <strong>Nombre:</strong>
-		            <input type="text" name="_id" class="form-control" placeholder="Name">
+		            <strong>Titulo:</strong>
+		            <input type="text" name="titulo" class="form-control" placeholder="Titulo">
 		        </div>
 		    </div>
 		    <div class="col-xs-12 col-sm-12 col-md-12">
 		        <div class="form-group">
 		            <strong>Materia:</strong>
-		            <textarea class="form-control" style="height:150px" name="puntos_actividad" placeholder="Detail"></textarea>
+		            <textarea class="form-control" name="materia" placeholder="Materia"></textarea>
+		        </div>
+            </div>
+            
+            <div class="col-xs-12 col-sm-12 col-md-12">
+		        <div class="form-group">
+		            <strong>Autores:</strong>
+		            <textarea class="form-control" name="autor" placeholder="Autor"></textarea>
+		        </div>
+            </div>
+            
+            <div class="col-xs-12 col-sm-12 col-md-12">
+		        <div class="form-group">
+		            <strong>Informacion Valiosa:</strong>
+		            <textarea class="form-control" style="height:200px" name="info" placeholder="Informacion"></textarea>
 		        </div>
 		    </div>
 		    <div class="col-xs-12 col-sm-12 col-md-12 text-center">
-		            <button type="submit" class="btn btn-primary">Submit</button>
+		            <button type="submit" class="btn btn-primary">Enviar</button>
 		    </div>
 		</div>
 
 
     </form>
-
 
 @endsection

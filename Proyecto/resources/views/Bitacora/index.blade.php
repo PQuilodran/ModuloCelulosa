@@ -23,28 +23,38 @@
 
     <table class="table table-bordered">
         <tr>
-            <th>No</th>
-            <th>Nombre</th>
+            <th>Titulo</th>
             <th>Materia</th>
+            <th>Autor</th>
+            <th>Info</th>
             <th width="280px">Action</th>
         </tr>
 	    @foreach ($Bitacora as $bitacora)
 	    <tr>
-	        <td>{{ ++$i }}</td>
-	        <td>{{ $bitacora->_id }}</td>
-	        <td>{{ $bitacora->puntos_actividad }}</td>
+	        <td>{{ $bitacora->titulo }}</td>
+            <td>{{ $bitacora->materia}}</td>
+            <td>{{ $bitacora->autor}}</td>
+            <td>{{ $bitacora->info}}</td>
+            
 	        <td>
                 <form action="{{ route('Bitacora.destroy',$bitacora->id) }}" method="POST">
-                    <a class="btn btn-info" href="{{ route('Bitacora.show',$bitacora->id) }}">Ver</a>
-                    <a class="btn btn-primary" href="{{ route('Bitacora.edit',$bitacora->id) }}">Editar</a>
+
+                    <a class="btn btn-info" href="{{ route('Bitacora.show',$bitacora->_id) }}">ver</a>
+
+                    <a class="btn btn-primary" href="{{ route('Bitacora.edit',$bitacora->_id) }}">Editar</a>
+
                     @csrf
+
                     @method('DELETE')
                     <button type="submit" class="btn btn-danger">Borrar</button>
                 </form>
-	        </td>
+                
+            </td>
+            
 	    </tr>
 	    @endforeach
     </table>
 
 
+    
 @endsection

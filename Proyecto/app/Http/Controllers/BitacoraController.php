@@ -38,8 +38,11 @@ class BitacoraController extends Controller
     public function store(Request $request)
     {
         request()->validate([
-            '_id' => 'required',
-            'puntos_actividad' => 'required',
+            'autor' => 'required',
+            'titulo' => 'required',
+            'materia' => 'required',
+            'info' => 'required',
+
         ]);
 
 
@@ -47,7 +50,7 @@ class BitacoraController extends Controller
 
 
         return redirect()->route('Bitacora.index')
-                        ->with('success','Bitacora created successfully.');
+                        ->with('success','Bitacora se creo correctamente.');
     }
 
     /**
@@ -56,9 +59,11 @@ class BitacoraController extends Controller
      * @param  \App\Bitacora  $bitacora
      * @return \Illuminate\Http\Response
      */
-    public function show(Bitacora $bitacora)
+    public function show(Bitacora $bitacora,$titulo)
     {
-        return view('Bitacora.show',compact('bitacora'));
+
+        $bitacora = Bitacora::find($titulo);
+        return view('Bitacora.show',compact('bitacora','titulo'));  
     }
 
     /**
@@ -67,9 +72,11 @@ class BitacoraController extends Controller
      * @param  \App\Bitacora  $bitacora
      * @return \Illuminate\Http\Response
      */
-    public function edit(Bitacora $bitacora)
+
+    public function edit($titulo)
     {
-        return view('Bitacora.edit',compact('bitacora'));
+        $bitacora = Bitacora::find($titulo);
+        return view('Bitacora.edit',compact('bitacora','titulo'));
     }
 
     /**
@@ -79,19 +86,23 @@ class BitacoraController extends Controller
      * @param  \App\Bitacora  $bitacora
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Bitacora $bitacora)
+    public function update(Request $request, $titulo)
     {
         request()->validate([
-            '_id' => 'required',
-            'puntos_actividad' => 'required',
+            'autor' => 'required',
+            'titulo' => 'required',
+            'materia' => 'required',
+            'info' => 'required',
         ]);
-
-
-        $bitacora->update($request->all());
-
+        $bitacora= Bitacora::find($titulo);
+        $bitacora->titulo = $request->get('titulo');
+        $bitacora->autor = $request->get('autor');
+        $bitacora->materia = $request->get('materia');
+        $bitacora->info = $request->get('info');        
+        $bitacora->save();
 
         return redirect()->route('Bitacora.index')
-                        ->with('success','Bitacora updated successfully');
+                        ->with('success','Bitacora se Actualizo correctamente');
     }
 
     /**
@@ -100,13 +111,15 @@ class BitacoraController extends Controller
      * @param  \App\Bitacora  $bitacora
      * @return \Illuminate\Http\Response
      */
-    public function destroy( $_id)
+
+    public function destroy( $titulo)
     {
-        $bitacora=Bitacora::find($_id);
+        $bitacora=bitacora::find($titulo);
+
          $bitacora->delete();
 
 
         return redirect()->route('Bitacora.index')
-                        ->with('success','Bitacora deleted successfully');
+                        ->with('success','Bitacora se Borro corectamente');
     }
 }
