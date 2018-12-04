@@ -59,12 +59,11 @@ class BitacoraController extends Controller
      * @param  \App\Bitacora  $bitacora
      * @return \Illuminate\Http\Response
      */
-    public function show(Bitacora $titulo)
+    public function show(Bitacora $bitacora,$titulo)
     {
 
         $bitacora = Bitacora::find($titulo);
-        
-        return view('Bitacora.show',compact('bitacora'));
+        return view('Bitacora.show',compact('bitacora','titulo'));  
     }
 
     /**
