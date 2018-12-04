@@ -15,11 +15,10 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-<<<<<<< HEAD
-Route::get('/coment', function () {
-    return view('comentarios');
+Route::get('/comentarios', function () {
+    return view('Bitacora.comentario');
 });
-=======
+
 Route::get('Cursos', 'CursosController@Cursos');
 Route::get('Comentarios', 'ComentariosController@Comentarios');
 Auth::routes();
@@ -29,5 +28,7 @@ Route::resource('Bitacora','BitacoraController');
 
 Route::get('index', 'Registro_tutorController@regis');
 
+Route::get('edit/{id}','BitacoraController@show');
+Route::get('edit/{id}','BitacoraController@edit');
+Route::post('edit/{titulo}','BitacoraController@update');
 Route::delete('{id}','BitacoraController@destroy');
->>>>>>> alfa

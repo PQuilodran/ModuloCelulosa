@@ -20,11 +20,7 @@
         </div>
     @endif
 
-<<<<<<< HEAD
-    
-=======
 
->>>>>>> alfa
     <table class="table table-bordered">
         <tr>
             <th>Titulo</th>
@@ -35,6 +31,7 @@
         </tr>
 	    @foreach ($Bitacora as $bitacora)
 	    <tr>
+            <td>{{ ++$i }}</td>
 	        <td>{{ $bitacora->titulo }}</td>
             <td>{{ $bitacora->materia}}</td>
             <td>{{ $bitacora->autor}}</td>
@@ -43,26 +40,14 @@
 	        <td>
                 <form action="{{ route('Bitacora.destroy',$bitacora->id) }}" method="POST">
 
-<<<<<<< HEAD
-                    <a class="btn btn-info" href="{{ route('Bitacora.show',$bitacora->id) }}">Ver</a>
+                    <a class="btn btn-info" href="{{ route('Bitacora.show',$bitacora->_id) }}">ver</a>
 
-                    <a class="btn btn-primary" href="{{ route('Bitacora.edit',$bitacora->id) }}">Editar</a>
-=======
-                    <a class="btn btn-info" href="{{ route('Bitacora.show',$bitacora->id) }}">Show</a>
-
-                    <a class="btn btn-primary" href="{{ route('Bitacora.edit',$bitacora->id) }}">Edit</a>
->>>>>>> alfa
+                    <a class="btn btn-primary" href="{{ route('Bitacora.edit',$bitacora->_id) }}">Editar</a>
 
                     @csrf
 
                     @method('DELETE')
-<<<<<<< HEAD
                     <button type="submit" class="btn btn-danger">Borrar</button>
-=======
-
-                    <button type="submit" class="btn btn-danger">Delete</button>
->>>>>>> alfa
-
                 </form>
                 
             </td>

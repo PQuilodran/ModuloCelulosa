@@ -25,53 +25,41 @@
         </div>
     @endif
 
-<<<<<<< HEAD
-    <form method="post" action="{{action('BitacoraController@update', $_id)}}">
+   <form method="post" action="{{action('BitacoraController@update', $titulo)}}">
     	@csrf
-        @method('PUT')
+        @method('POST')
 
-         <div class="row">
+          <div class="row">
             <div class="col-xs-12 col-sm-12 col-md-12">
                 <div class="form-group">
-                    <strong>Nombre:</strong>
-                    <input type="text" name="_id" class="form-control" placeholder="Name">>
+                    <strong>Titulo:</strong>
+                    <input type="text" name="titulo" class="form-control" placeholder="Titulo">
                 </div>
             </div>
             <div class="col-xs-12 col-sm-12 col-md-12">
                 <div class="form-group">
                     <strong>Materia:</strong>
-                    <textarea class="form-control" style="height:150px" name="puntos_actividad" placeholder="Detail"></textarea>
+                    <textarea class="form-control" name="materia" placeholder="Materia"></textarea>
+                </div>
+            </div>
+            
+            <div class="col-xs-12 col-sm-12 col-md-12">
+                <div class="form-group">
+                    <strong>Autores:</strong>
+                    <textarea class="form-control" name="autor" placeholder="Autor"></textarea>
+                </div>
+            </div>
+            
+            <div class="col-xs-12 col-sm-12 col-md-12">
+                <div class="form-group">
+                    <strong>Informacion Valiosa:</strong>
+                    <textarea class="form-control" style="height:200px" name="info" placeholder="Informacion"></textarea>
                 </div>
             </div>
             <div class="col-xs-12 col-sm-12 col-md-12 text-center">
-                    <button type="submit" class="btn btn-primary">Enviar</button>
+                    <button type="submit" class="btn btn-primary">Submit</button>
             </div>
         </div>
-=======
-
-    <form action="{{ route('Bitacora.update',$bitacora->id) }}" method="POST">
-    	@csrf
-        @method('PUT')
-
-
-         <div class="row">
-		    <div class="col-xs-12 col-sm-12 col-md-12">
-		        <div class="form-group">
-		            <strong>Nombre:</strong>
-		            <input type="text" name="_id" value="{{ $bitacora->_id }}" class="form-control" placeholder="Name">
-		        </div>
-		    </div>
-		    <div class="col-xs-12 col-sm-12 col-md-12">
-		        <div class="form-group">
-		            <strong>Materia:</strong>
-		            <textarea class="form-control" style="height:150px" name="puntos_actividad" placeholder="Detail">{{ $bitacora->puntos_actividad }}</textarea>
-		        </div>
-		    </div>
-		    <div class="col-xs-12 col-sm-12 col-md-12 text-center">
-		      <button type="submit" class="btn btn-primary">Submit</button>
-		    </div>
-		</div>
->>>>>>> alfa
 
 
     </form>

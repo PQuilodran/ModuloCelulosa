@@ -22,6 +22,6 @@ class Bitacora extends Eloquent
     protected $fillable = [
         '_id', 'titulo','materia','autor','info'
     ];
-    protected $primaryKey = 'id'; 
+     
     
 }

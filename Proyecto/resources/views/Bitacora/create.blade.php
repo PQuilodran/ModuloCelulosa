@@ -14,7 +14,7 @@
     </div>
 
 
-    @if ($errors->any())
+   @if ($errors->any())
         <div class="alert alert-danger">
             <strong>Ups!</strong> Hay un error con los datos ingresados o no estan completos los campos..<br><br>
             <ul>
@@ -58,7 +58,7 @@
 		        </div>
 		    </div>
 		    <div class="col-xs-12 col-sm-12 col-md-12 text-center">
-		            <button type="submit" class="btn btn-primary">Submit</button>
+		            <button type="submit" class="btn btn-primary">Enviar</button>
 		    </div>
 		</div>
 
