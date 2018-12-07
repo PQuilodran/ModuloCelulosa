@@ -31,7 +31,7 @@
         </tr>
 	    @foreach ($Bitacora as $bitacora)
 	    <tr>
-            
+
 	        <td>{{ $bitacora->titulo }}</td>
             <td>{{ $bitacora->materia}}</td>
             <td>{{ $bitacora->autor}}</td>
