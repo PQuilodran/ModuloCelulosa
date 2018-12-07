@@ -17,17 +17,25 @@
     <div class="row">
         <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
-                <strong>Nombre:</strong>
-                {{ $bitacora->_id }}
+                <strong>titulo:</strong>
+                {{ $bitacora->titulo }}
             </div>
         </div>
         <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
-                <strong>Details:</strong>
-                {{ $bitacora->puntos_actividad }}
+                <strong>Materia:</strong>
+                {{ $bitacora->materia}}
+            </div>
+        </div>
+    
+        <div class="col-xs-12 col-sm-12 col-md-12">
+            <div class="form-group">
+                <strong>Info:</strong>
+                {{ $bitacora->info}}
             </div>
         </div>
     </div>
+
 
     
     <div class="col-md-10 clear"><hr><h3>Comentario</h3>

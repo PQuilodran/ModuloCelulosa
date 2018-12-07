@@ -19,11 +19,7 @@ Route::get('/comentarios', function () {
     return view('Bitacora.comentario');
 });
 
-Route::get('Cursos', 'CursosController@Cursos');
-Route::get('Comentarios', 'ComentariosController@Comentarios');
-Auth::routes();
 
-Route::resource('Bitacora','BitacoraController');
 Route::resource('Bitacora','BitacoraController');
 
 Route::get('index', 'Registro_tutorController@regis');
