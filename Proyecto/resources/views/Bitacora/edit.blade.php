@@ -56,6 +56,7 @@
 
             <div class="col-xs-12 col-sm-12 col-md-12">
                 <div class="form-group">
+
                     <strong>Informacion Valiosa:</strong>
 
 
@@ -63,6 +64,7 @@
                     {{ $bitacora->info}}</textarea>
 
                     <textarea class="form-control" style="height:200px" name="info" >{{ $bitacora->info}}</textarea>
+
 
                 </div>
             </div>
