@@ -86,14 +86,14 @@ class BitacoraController extends Controller
      * @param  \App\Bitacora  $bitacora
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $_id)
+    public function update(Request $request, $titulo)
     {
 
-        
-            'info' => 'required',
+        request()->validate([
+            'info' => 'required'
         ]);
 
-        $bitacora= Bitacora::find($titulo);
+        $bitacora = Bitacora::find($titulo);
         $bitacora->info = $request->get('info');
         $bitacora->save();
 

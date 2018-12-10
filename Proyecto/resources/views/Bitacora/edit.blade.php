@@ -63,8 +63,6 @@
                     <textarea class="form-control" style="height:200px" name="info" placeholder="Informacion">
                     {{ $bitacora->info}}</textarea>
 
-                    <textarea class="form-control" style="height:200px" name="info" >{{ $bitacora->info}}</textarea>
-
 
                 </div>
             </div>
