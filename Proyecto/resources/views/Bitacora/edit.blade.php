@@ -25,7 +25,7 @@
         </div>
     @endif
 
-   <form method="post" action="{{action('BitacoraController@update', $titulo)}}">
+   <form method="post" action="{{action('BitacoraController@update', $bitacora->id)}}">
     	@csrf
         @method('POST')
 
@@ -33,32 +33,37 @@
             <div class="col-xs-12 col-sm-12 col-md-12">
                 <div class="form-group">
                     <strong>Titulo:</strong>
-                     {{ $bitacora->titulo }}
-                    
+                     <input name="titulo" value ="{{ $bitacora->titulo }}"></input>
+
                 </div>
             </div>
             <div class="col-xs-12 col-sm-12 col-md-12">
                 <div class="form-group">
                     <strong>Materia:</strong>
-                     {{ $bitacora->materia}}
-                    
+                     <input name="materia" value="{{ $bitacora->materia}}"></input>
+
                 </div>
             </div>
-            
+
             <div class="col-xs-12 col-sm-12 col-md-12">
                 <div class="form-group">
                     <strong>Autores:</strong>
-                    {{ $bitacora->autor}}
-                    
+                    <input name="autor" value="{{ $bitacora->autor}}"></input>
+
+
                 </div>
             </div>
-            
+
             <div class="col-xs-12 col-sm-12 col-md-12">
                 <div class="form-group">
                     <strong>Informacion Valiosa:</strong>
 
+
                     <textarea class="form-control" style="height:200px" name="info" placeholder="Informacion">
                     {{ $bitacora->info}}</textarea>
+
+                    <textarea class="form-control" style="height:200px" name="info" >{{ $bitacora->info}}</textarea>
+
                 </div>
             </div>
             <div class="col-xs-12 col-sm-12 col-md-12 text-center">
