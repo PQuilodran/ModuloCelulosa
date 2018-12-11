@@ -5,10 +5,10 @@
     <div class="row">
         <div class="col-lg-12 margin-tb">
             <div class="pull-left">
-                <h2>Edit Bitacora</h2>
+                <h2>Editar Bitacora</h2>
             </div>
             <div class="pull-right">
-                <a class="btn btn-primary" href="{{ route('Bitacora.index') }}"> Back</a>
+                <a class="btn btn-primary" href="{{ route('Bitacora.index') }}"> volver</a>
             </div>
         </div>
     </div>
@@ -25,7 +25,7 @@
         </div>
     @endif
 
-   <form method="post" action="{{action('BitacoraController@update', $titulo)}}">
+   <form method="post" action="{{action('BitacoraController@update', $bitacora->id)}}">
     	@csrf
         @method('POST')
 
@@ -33,31 +33,41 @@
             <div class="col-xs-12 col-sm-12 col-md-12">
                 <div class="form-group">
                     <strong>Titulo:</strong>
-                    <input type="text" name="titulo" class="form-control" placeholder="Titulo">
+                     <input name="titulo" value ="{{ $bitacora->titulo }}"></input>
+
                 </div>
             </div>
             <div class="col-xs-12 col-sm-12 col-md-12">
                 <div class="form-group">
                     <strong>Materia:</strong>
-                    <textarea class="form-control" name="materia" placeholder="Materia"></textarea>
+                     <input name="materia" value="{{ $bitacora->materia}}"></input>
+
                 </div>
             </div>
-            
+
             <div class="col-xs-12 col-sm-12 col-md-12">
                 <div class="form-group">
                     <strong>Autores:</strong>
-                    <textarea class="form-control" name="autor" placeholder="Autor"></textarea>
+                    <input name="autor" value="{{ $bitacora->autor}}"></input>
+
+
                 </div>
             </div>
-            
+
             <div class="col-xs-12 col-sm-12 col-md-12">
                 <div class="form-group">
+
                     <strong>Informacion Valiosa:</strong>
-                    <textarea class="form-control" style="height:200px" name="info" placeholder="Informacion"></textarea>
+
+
+                    <textarea class="form-control" style="height:200px" name="info" placeholder="Informacion">
+                    {{ $bitacora->info}}</textarea>
+
+
                 </div>
             </div>
             <div class="col-xs-12 col-sm-12 col-md-12 text-center">
-                    <button type="submit" class="btn btn-primary">Submit</button>
+                    <button type="submit" class="btn btn-primary">Enviar</button>
             </div>
         </div>
 
