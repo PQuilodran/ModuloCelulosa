@@ -24,9 +24,11 @@ class BitacoraController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+   
+    public function create(Request $request)
     {
-        return view('Bitacora.create');
+       $Bitacora = Bitacora::all();
+        return view('Bitacora.create',compact('Bitacora'));
     }
 
     /**
