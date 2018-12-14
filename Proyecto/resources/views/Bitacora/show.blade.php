@@ -27,7 +27,7 @@
                 {{ $bitacora->materia}}
             </div>
         </div>
-    
+
         <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
                 <strong>Info:</strong>
@@ -36,26 +36,27 @@
         </div>
     </div>
 
+    <div class="">
+        <form action="{{action('BitacoraController@evaluar', $bitacora->id)}}" >
+          @csrf
+          @method('POST')
+           Me gusta: {{$bitacora->puntaje}}</br>
+           <button type="submit" class="btn btn-primary " name="evalua" value="inc">+1</button>
+           <button type="submit" class="btn btn-primary " name="evalua" value="dec">-1</button>
+        </form>
+    </div>
 
-    
-    <div class="col-md-10 clear"><hr><h3>Comentario</h3>
+    <div class="col-md-10 clear"><hr><h3>Comentarios</h3>
+    </div>
+
+    <div class="col-md-10">
+        <div style="background-color:rgba(153, 243, 243,0.5); margin-top: 2%">
             </div>
-            
-                                      
-           <div class="col-md-10">
-                        
-                  <div style="background-color:rgba(153, 243, 243,0.5); margin-top: 2%">
-                      
-                  
-                                     
-                   </div>                      
-                                
-                        
-              <form class="form-group" action="guardar.php" method='POST'>
-                  <label for="comennt">Agregar comentario</label>
-                  <textarea type="text" rows="5" name="coment" id="coment" class="form-control"></textarea>
-                   <button type="submit" class="btn btn-primary ">Enviar Comentario</button>
-               </form>
+            <form class="form-group" action="guardar.php" method='POST'>
+                <label for="comennt">Agregar comentario</label>
+                <textarea type="text" rows="5" name="coment" id="coment" class="form-control"></textarea>
+                  <button type="submit" class="btn btn-primary ">Enviar</button>
+           </form>
         </div>
 
 @endsection

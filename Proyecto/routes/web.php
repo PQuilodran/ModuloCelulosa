@@ -10,7 +10,7 @@ Route::get('/comentarios', function () {
     return view('Bitacora.comentario');
 });
 
-
+Route::get('Bitacora/show/{titulo}','BitacoraController@evaluar');
 Route::resource('Bitacora','BitacoraController');
 
 Route::get('index', 'Registro_tutorController@regis');

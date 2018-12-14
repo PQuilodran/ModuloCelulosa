@@ -37,33 +37,33 @@
 		            <input type="text" name="titulo" class="form-control" placeholder="Titulo">
 		        </div>
 		    </div>
-           
+
 		    <div class="col-xs-12 col-sm-12 col-md-12">
 		        <div class="form-group">
 		            <strong>Materia:</strong>
 
 		            <div class="container">
-  
+
                     <form>
                      <div class="form-group">
-                     <select class="form-control" id="sel1">
+                     <select name="materia" class="form-control" id="sel1">
                       @foreach($Bitacora as $bitacora)
-                     <option>{{ $bitacora->materia}}</option>
-                   @endforeach
+                      <option  value="{{ $bitacora->materia}}">{{ $bitacora->materia}}</option>
+                      @endforeach
                     </select>
                   </div>
                  </form>
                 </div>
 		        </div>
             </div>
-            
+
             <div class="col-xs-12 col-sm-12 col-md-12">
 		        <div class="form-group">
 		            <strong>Autores:</strong>
 		            <textarea class="form-control" name="autor" placeholder="Autor"></textarea>
 		        </div>
             </div>
-            
+
             <div class="col-xs-12 col-sm-12 col-md-12">
 		        <div class="form-group">
 		            <strong>Informacion Valiosa:</strong>
