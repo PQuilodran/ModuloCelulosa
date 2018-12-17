@@ -19,3 +19,6 @@ Route::get('edit/{id}','BitacoraController@show');
 Route::get('edit/{id}','BitacoraController@edit');
 Route::post('edit/{titulo}','BitacoraController@update');
 Route::delete('{id}','BitacoraController@destroy');
+
+
+Route::get('/all', 'BitacoraController@index');
