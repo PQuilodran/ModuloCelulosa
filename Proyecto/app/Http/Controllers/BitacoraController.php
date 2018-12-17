@@ -137,15 +137,4 @@ class BitacoraController extends Controller
       return redirect()->route('Bitacora.show',compact('bitacora','titulo'));
 
     }
-
-    public function guardarComentario(Request $request) {
-    request()->validate([
-        'idBitacora' => 'required',
-        'coment' => 'required'
-    ]);
-    Comentario::create($request->all());
-    return redirect()->route('Bitacora.show')
-                    ->with('success','Comentario se creo correctamente.');
-    }
-
 }
