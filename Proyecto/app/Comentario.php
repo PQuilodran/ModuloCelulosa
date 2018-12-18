@@ -5,9 +5,9 @@ use Jenssegers\Mongodb\Eloquent\Model as Eloquent;
 
 class Comentario extends Eloquent {
 	protected $connection = 'mongodb';
-    protected $collection = 'Comentario';
+    protected $collection = 'Comentarios';
 
     protected $fillable = [
-        'idBitacora','titulo','coment'
+        'idBitacora','titulo','coment','fecha'
     ];
 }

@@ -50,17 +50,23 @@
         </form>
     </div>
 
-    <div class="col-md-10 clear"><hr><h3>Comentarios</h3>
-    </div>
-
-    <div class="col-md-10">
-        <div style="background-color:rgba(153, 243, 243,0.5); margin-top: 2%">
-            </div>
-            <form class="form-group" action="guardar.php" method='POST'>
-                <label for="comennt">Agregar comentario</label>
-                <textarea type="text" rows="5" name="coment" id="coment" class="form-control"></textarea>
-                  <button type="submit" class="btn btn-primary ">Enviar</button>
-           </form>
+    <div class="col-md-10 clear"><hr><h3>Comentario</h3>
         </div>
+        <div class="col-md-10">
+            <div style="background-color:rgba(153, 243, 243,0.5); margin-top: 2%">
 
+
+
+            </div>
+    		<form class="form-group" action="{{ route('Comentario.store') }}" method="POST">
+                <label for="coment">Agregar comentario</label>
+    			@csrf
+
+    			<input name="idBitacora" type="hidden" value="{{$bitacora->_id}}">
+    			<input name="titulo" type="hidden" value="{{$bitacora->titulo}}">
+    			<input name="fecha" type="hidden"  value="{{date('Y-m-d H:i:s')}}">
+                <textarea type="text" rows="5" name="coment" id="coment" class="form-control"></textarea>
+                <button type="submit" class="btn btn-primary ">Enviar Comentario</button>
+            </form>
+    	</div>
 @endsection

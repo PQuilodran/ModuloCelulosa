@@ -12,15 +12,15 @@
 
     <table class="table table-bordered">
         <tr>
-		    <td>id Comentario</td>
-			<td>titulo</th>
+			<th>Titulo post</th>
+			<th>Fecha comentario</th>
 			<th>Comentario</th>
             <th width="280px">Action</th>
         </tr>
 	    @foreach ($comentario as $comentario)
 	    <tr>
-		    <td>{{ $comentario->_id }}</td>
 			<td>{{ $comentario->titulo }}</td>
+			<td>{{ $comentario->fecha }}</td>
             <td>{{ $comentario->coment}}</td>            
 	    @endforeach
     </table>
