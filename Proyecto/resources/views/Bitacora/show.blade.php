@@ -11,9 +11,6 @@
             <div class="pull-right">
                 <a class="btn btn-primary" href="{{ route('Bitacora.index') }}"> Volver</a>
             </div>
-            <div class="pull-right">
-				        <a class="btn btn-success"   href="{{ route('Comentario.index', ['idB'=>$bitacora->_id]) }}"> Ver todos sus Comentarios</a>
-            </div>
         </div>
     </div>
 
@@ -54,9 +51,6 @@
         </div>
         <div class="col-md-10">
             <div style="background-color:rgba(153, 243, 243,0.5); margin-top: 2%">
-
-
-
             </div>
     		<form class="form-group" action="{{ route('Comentario.store') }}" method="POST">
                 <label for="coment">Agregar comentario</label>
@@ -69,4 +63,8 @@
                 <button type="submit" class="btn btn-primary ">Enviar Comentario</button>
             </form>
     	</div>
+
+      <div class="col-md-10" style="margin-top: 2%">
+          <a class="btn btn-success"   href="{{ route('Comentario.index', ['idB'=>$bitacora->_id]) }}"> Ver todos sus Comentarios</a>
+      </div>
 @endsection
