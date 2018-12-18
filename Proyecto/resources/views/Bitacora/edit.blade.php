@@ -63,13 +63,24 @@
                     <textarea class="form-control" style="height:200px" name="info" placeholder="Informacion">
                     {{ $bitacora->info}}</textarea>
 
-
+                    <button type="submit" class="btn btn-primary ">Enviar </button>
                 </div>
+            <div class="pull-right">
+                        <a class="btn btn-success"   href="{{ route('informacion.index', ['idI'=>$bitacora->_id]) }}"> Ver toda su informacion</a>
             </div>
-            <div class="col-xs-12 col-sm-12 col-md-12 text-center">
-                    <button type="submit" class="btn btn-primary">Enviar</button>
-            </div>
+            <form class="form-group" action="{{ route('informacion.store') }}" method="POST">
+                <label for="informacion">Agregar informacion</label>
+                @csrf
+
+                <input name="id" type="hidden" value="{{$bitacora->_id}}">
+                <input name="titulo" type="hidden" value="{{$bitacora->titulo}}">
+                <input name="fecha" type="hidden"  value="{{date('Y-m-d H:i:s')}}">
+                <textarea type="informacion" rows="5" name="Informacion" id="Informacion" class="form-control"></textarea>
+                <button type="submit" class="btn btn-primary ">Enviar informacion</button>
+            </form>
         </div>
+            </div>
+            
 
 
     </form>

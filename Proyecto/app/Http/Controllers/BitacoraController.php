@@ -24,7 +24,7 @@ class BitacoraController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-   
+
     public function create(Request $request)
     {
        $Bitacora = Bitacora::all();
@@ -61,11 +61,11 @@ class BitacoraController extends Controller
      * @param  \App\Bitacora  $bitacora
      * @return \Illuminate\Http\Response
      */
-    public function show(Bitacora $bitacora,$titulo)
+    public function show(Bitacora $bitacora, $titulo)
     {
 
         $bitacora = Bitacora::find($titulo);
-        return view('Bitacora.show',compact('bitacora','titulo'));  
+        return view('Bitacora.show',compact('bitacora','titulo'));
     }
 
     /**
@@ -94,7 +94,8 @@ class BitacoraController extends Controller
             'info' => 'required',
         ]);
         $bitacora= Bitacora::find($titulo);
-        $bitacora->info = $request->get('info');        
+        $bitacora->info = $request->get('info');
+        $bitacora= $informacion->informacion=$request->('informacion');
         $bitacora->save();
 
         return redirect()->route('Bitacora.index')
@@ -108,14 +109,33 @@ class BitacoraController extends Controller
      * @return \Illuminate\Http\Response
      */
 
-    public function destroy( $titulo)
+    public function destroy(Request $request, $titulo)
     {
-        $bitacora=bitacora::find($titulo);
-
-         $bitacora->delete();
-
-
+        $bitacora=Bitacora::find($titulo);
+        $bitacora->delete();
         return redirect()->route('Bitacora.index')
                         ->with('success','Bitacora se Borro corectamente');
+    }
+
+    public function evaluar(Request $request, $titulo)
+    {
+        request()->validate([
+          'evalua' => 'required',
+      ]);
+      $bitacora=Bitacora::find($titulo);
+      $pts = $bitacora->puntaje;
+      $ev = $request->post('evalua');
+      if ($ev =="inc")
+      {
+        $bitacora->puntaje = $pts+1;
+        $bitacora->save();
+      }
+      if ($ev =="dec")
+      {
+        $bitacora->puntaje = $pts -1;
+        $bitacora->save();
+      }
+      return redirect()->route('Bitacora.show',compact('bitacora','titulo'));
+
     }
 }

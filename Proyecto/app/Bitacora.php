@@ -11,7 +11,7 @@ class Bitacora extends Eloquent
 {
 	protected $connection = 'mongodb';
     protected $collection = 'Bitacora';
-    
+
 
 
     /**
@@ -20,8 +20,8 @@ class Bitacora extends Eloquent
      * @var array
      */
     protected $fillable = [
-        '_id', 'titulo','materia','autor','info'
+        '_id', 'titulo','materia','autor','info','puntaje'
     ];
-     
-    
+
+
 }
