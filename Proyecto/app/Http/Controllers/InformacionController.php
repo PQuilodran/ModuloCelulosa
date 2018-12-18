@@ -10,7 +10,7 @@ class InformacionController extends Controller {
 //
     public function index($idI) {
 		$informacion = informacion::all()->where('id', $idI);
-        return view('informacion.index',compact('informacion'))
+        return view('informacion.edit',compact('informacion'))
             ->with('i', (request()->input('page', 1) - 1) * 5);			
     }
 
@@ -27,13 +27,11 @@ class InformacionController extends Controller {
      */
     public function store(Request $request) {
         request()->validate([
-            'id' => 'required',
-			'titulo' => 'required',
             'informacion' => 'required',
-            'fecha'  => 'required'
+
         ]);
         informacion::create($request->all());
-        return redirect()->route('Bitacora.edit')
+        return redirect()->route('Bitacora.index')
                         ->with('success','informacion se creo correctamente.');
     }
 

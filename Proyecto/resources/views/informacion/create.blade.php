@@ -30,10 +30,6 @@
     	@csrf
          <div class="row">
 		    <div class="col-xs-12 col-sm-12 col-md-12">
-		        <div class="form-group">
-		            <strong>id:</strong>
-		            <input type="text" name="id" class="form-control" placeholder="id">
-		        </div>
 		    </div>
             <div class="col-xs-12 col-sm-12 col-md-12">
 		        <div class="form-group">
@@ -45,6 +41,10 @@
 		            <button type="submit" class="btn btn-primary">Enviar</button>
 		    </div>
 		</div>
+        <input name="id" type="hidden" value="{{$bitacora->idI}}">
+        <div class="col-md-10" style="margin-top: 2%">
+          <a class="btn btn-success"   href="{{ route('informacion.index', ['idI'=>$Bitacora->id]) }}"> Mas informcaion</a>
+      </div>
     </form>
 
 @endsection

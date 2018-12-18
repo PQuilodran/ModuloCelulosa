@@ -67,23 +67,11 @@
 
                 </div>
 
-
-            <div class="pull-right">
-                        <a class="btn btn-success"   href="{{ route('informacion.index', ['idI'=>$bitacora->_id]) }}"> Ver toda su informacion</a>
-            </div>
-            <form class="form-group" action="{{ route('informacion.store') }}" method="POST">
-                <label for="informacion">Agregar informacion</label>
-                @csrf
-
-                <input name="id" type="hidden" value="{{$bitacora->_id}}">
-                <input name="titulo" type="hidden" value="{{$bitacora->titulo}}">
-                <input name="fecha" type="hidden"  value="<?php  date_default_timezone_set('America/Santiago'); echo(date('Y-m-d H:i:s'))?>">
-                <textarea type="informacion" rows="5" name="Informacion" id="Informacion" class="form-control"></textarea>
-                <button type="submit" class="btn btn-primary ">Enviar informacion</button>
             </form>
-        </div>
+            <div class="pull-right">
+                <a class="btn btn-primary" href="{{ route('informacion.create') }}"> Agregar informacion</a>
             </div>
-    </form>
+    
 
 
     

@@ -24,7 +24,11 @@ Auth::routes();
 
 
 Route::resource('informacion','InformacionController');
-Route::get('informacion.index/{id}', ['as' => 'informacion.index', 'uses' => 'InformacionController@index']);
+Route::get('edit/{id}','informacionController@create');
+Route::get('','informacionController@create');
+
+Route::get('informacion.edit/{idI}', ['as' => 'informacion.edit', 'uses' => 'InformacionController@edit']);
+
 Auth::routes();
 
 

@@ -89,9 +89,7 @@ class BitacoraController extends Controller
      */
     public function update(Request $request, $titulo)
     {
-        request()->validate([
-            'info' => 'required',
-        ]);
+        
         $bitacora= Bitacora::find($titulo);
         $bitacora->info = $request->get('info');
         $bitacora->save();
