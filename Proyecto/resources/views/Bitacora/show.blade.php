@@ -11,9 +11,6 @@
             <div class="pull-right">
                 <a class="btn btn-primary" href="{{ route('Bitacora.index') }}"> Volver</a>
             </div>
-            <div class="pull-right">
-				        <a class="btn btn-success"   href="{{ route('Comentario.index', ['idB'=>$bitacora->_id]) }}"> Ver todos sus Comentarios</a>
-            </div>
         </div>
     </div>
 
@@ -64,9 +61,12 @@
 
     			<input name="idBitacora" type="hidden" value="{{$bitacora->_id}}">
     			<input name="titulo" type="hidden" value="{{$bitacora->titulo}}">
-    			<input name="fecha" type="hidden"  value="{{date('Y-m-d H:i:s')}}">
+    			<input name="fecha" type="hidden"  value="<?php  date_default_timezone_set('America/Santiago'); echo(date('Y-m-d H:i:s')) ?>" >
                 <textarea type="text" rows="5" name="coment" id="coment" class="form-control"></textarea>
                 <button type="submit" class="btn btn-primary ">Enviar Comentario</button>
             </form>
+            <div class="pull-right">
+                        <a class="btn btn-success"   href="{{ route('Comentario.index', ['idB'=>$bitacora->_id]) }}"> Mas Comentarios</a>
+            </div>
     	</div>
 @endsection
