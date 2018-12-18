@@ -15,8 +15,7 @@ class BitacoraController extends Controller
     public function index()
     {
         $Bitacora = Bitacora::all();
-        return view('Bitacora.index',compact('Bitacora'))
-            ->with('i', (request()->input('page', 1) - 1) * 5);
+        return view('Bitacora.index',compact('Bitacora'));
     }
 
     /**
