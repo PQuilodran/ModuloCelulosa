@@ -38,7 +38,7 @@
             <div class="col-xs-12 col-sm-12 col-md-12">
 		        <div class="form-group">
 		            <strong>informacion:</strong>
-		            <textarea class="form-control" name="comment" placeholder="comment"></textarea>
+		            <textarea class="form-control" name="informacion" placeholder="informacion"></textarea>
 		        </div>
             </div>
 		    <div class="col-xs-12 col-sm-12 col-md-12 text-center">
