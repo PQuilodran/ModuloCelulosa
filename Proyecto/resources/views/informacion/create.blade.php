@@ -40,11 +40,6 @@
 		    <div class="col-xs-12 col-sm-12 col-md-12 text-center">
 		            <button type="submit" class="btn btn-primary">Enviar</button>
 		    </div>
-		</div>
-        <input name="id" type="hidden" value="{{$bitacora->idI}}">
-        <div class="col-md-10" style="margin-top: 2%">
-          <a class="btn btn-success"   href="{{ route('informacion.index', ['idI'=>$Bitacora->id]) }}"> Mas informcaion</a>
-      </div>
-    </form>
+		    </form>
 
 @endsection
