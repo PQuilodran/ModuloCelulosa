@@ -9,6 +9,9 @@ Auth::routes();
 
 
 
+
+
+
 Route::get('Bitacora/show/{titulo}','BitacoraController@evaluar');
 Route::resource('Bitacora','BitacoraController');
 Route::get('index', 'Registro_tutorController@regis');
@@ -19,9 +22,11 @@ Route::delete('{id}','BitacoraController@destroy');
 Route::get('/all', 'BitacoraController@index');
 Auth::routes();
 
+
 Route::resource('informacion','InformacionController');
 Route::get('informacion.index/{id}', ['as' => 'informacion.index', 'uses' => 'InformacionController@index']);
 Auth::routes();
+
 
 
 

@@ -65,7 +65,7 @@
     			<input name="idBitacora" type="hidden" value="{{$bitacora->_id}}">
     			<input name="titulo" type="hidden" value="{{$bitacora->titulo}}">
     			<input name="fecha" type="hidden"  value="{{date('Y-m-d H:i:s')}}">
-                <strongtype="text" rows="5" name="coment" id="coment" class="form-control"></strong>
+                <textarea type="text" rows="5" name="coment" id="coment" class="form-control"></textarea>
                 <button type="submit" class="btn btn-primary ">Enviar Comentario</button>
             </form>
     	</div>

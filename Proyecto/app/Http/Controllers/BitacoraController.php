@@ -95,7 +95,6 @@ class BitacoraController extends Controller
         ]);
         $bitacora= Bitacora::find($titulo);
         $bitacora->info = $request->get('info');
-        $bitacora= $informacion->informacion=$request->('informacion');
         $bitacora->save();
 
         return redirect()->route('Bitacora.index')

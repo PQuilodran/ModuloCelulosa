@@ -47,18 +47,23 @@
                     <form>
                      <input class="form-control" name="materia" >
                      <div class="form-group">
-<<<<<<< HEAD
+
                      <select class="form-control" name="materia">
                       @foreach($Bitacora as $bitacora)
                      <option>{{ $bitacora->materia}}</option>
                    @endforeach
 
-=======
+
                      <select name="materia" class="form-control" id="sel1">
                       @foreach($Bitacora as $bitacora)
                       <option  value="{{ $bitacora->materia}}">{{ $bitacora->materia}}</option>
                       @endforeach
->>>>>>> alfa
+
+                     <select name="materia" class="form-control" id="sel1">
+                      @foreach($Bitacora as $bitacora)
+                      <option  value="{{ $bitacora->materia}}">{{ $bitacora->materia}}</option>
+                      @endforeach
+
                     </select>
                   </div>
                  </form>
