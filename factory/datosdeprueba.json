@@ -1,0 +1,9 @@
+{
+	"name": "datosdeprueba",
+	"location": "eastus",
+	"identity": {
+		"type": "SystemAssigned",
+		"principalId": "c941886a-4b7e-44dd-bd67-3e60b0eb8f8a",
+		"tenantId": "0d84973b-8bb7-4458-9c29-21fab46f152c"
+	}
+}
