@@ -12,7 +12,9 @@
 		"type": "DelimitedText",
 		"typeProperties": {
 			"location": {
-				"type": "AzureBlobStorageLocation"
+				"type": "AzureBlobStorageLocation",
+				"folderPath": "casoscov",
+				"container": "pruebadealmacenamiento"
 			},
 			"columnDelimiter": ",",
 			"escapeChar": "\\",
